@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <head>
-    <title>Đăng kí</title>
+  <title>Đăng kí</title>
 </head>
 <style>
-    body{background-color: beige;
-    font-weight: 700;}
-    div{border-radius: 10px;
-     background-color: white;
-     width: 200px;
-    padding: 20px;}
-     form{text-align: center;
-    font-size: 30px;}
-     button{padding:10px 60px }
-     button:hover{background: green;}
-     
-   </style>
+  div {
+    font-weight: 600;
+    border: 5px ridge;
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+  }
+  form {
+    text-align: center;
+    font-size: 30px;
+  }
+  button {
+    border: none;
+    border-radius: 5px;
+    padding: 15px 70px;
+    background-color: aquamarine;
+  }
+  button:hover {
+    background: blue;
+  }
+  input {
+    outline: none;
+    padding: 10px;
+  }
+</style>
 <body>
-   <div>
-    <form action="Thong tin" >Đăng ký </form>
-    <label for="use name">Tên:</label><br>
-    <input type="text" id="usename" ><br><br>
-    <label for=" email">Email:</label><br>
-    <input type="email" id="email"><br><br>
-    <label for="password">Mật khẩu: </label><br>
-    <input type="password" id="password" ><br><br>
-    <button type="submit">Đăng kí </button>
-    </div>
+  <div>
+    <form action="Thong tin">Đăng ký</form>
+    <label for="use name">Tên:</label><br />
+    <input type="text" id="usename" /><br /><br />
+    <label for=" email">Email:</label><br />
+    <input type="email" id="email" /><br /><br />
+    <label for="password">Mật khẩu: </label><br />
+    <input type="password" id="password" /><br /><br />
+    <button type="submit">Đăng kí</button>
+  </div>
 </body>
