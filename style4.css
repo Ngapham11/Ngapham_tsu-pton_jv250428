@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: blueviolet;
+  padding: 10px;
+  color: white;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.main1 {
+  padding: 10px;
+  color: white;
+  background-color: red;
+  width: 30%;
+  height: 300px;
+  margin: 10px 0;
+}
+.main2 {
+  padding: 10px;
+  color: white;
+  background-color: darkgreen;
+  width: 70%;
+  height: 300px;
+  margin: 10px 0 10px 10px;
+}
+.footer {
+  background-color: blue;
+  padding: 10px;
+  color: white;
+}
