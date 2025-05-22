@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: burlywood;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container > div {
+  text-align: center;
+  margin: 10px;
+  background-color: blue;
+  color: white;
+}
+.content1 {
+  padding: 10px 40px;
+}
+.content2 {
+  padding: 10px 95px;
+}
