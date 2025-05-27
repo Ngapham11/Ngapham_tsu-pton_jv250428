@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(46, 45, 45);
+  background-color: rgb(33, 33, 114);
   color: white;
-  text-align: center;
+}
+.container {
   padding: 20px;
+  background-color: rgb(32, 31, 31);
+  margin: 50px;
+}
+.session1 {
+  padding: 30px;
+  border-bottom: 1px solid rgb(77, 75, 75);
+  text-align: center;
 }
 .header {
   display: flex;
@@ -27,14 +35,19 @@ a.header1 {
   border: 1px solid white;
   padding: 10px;
 }
+div.main1-input {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 input {
   text-align: center;
-  width: 120px;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px 50px;
+  margin: 20px 20px;
   background-color: rgb(46, 45, 45);
   color: white;
   border: 1px solid white;
+  border-radius: 5px;
 }
 input:hover {
   background-color: rgb(78, 78, 233);
@@ -48,21 +61,20 @@ h2 {
 .box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
-.box > div {
+.box div {
   border-radius: 5px;
   padding: 30px 70px;
-  width: calc(30%-10px);
+  width: calc(30%-20px);
+  height: 250px;
   margin: 10px;
 }
-.footer {
+.main3 {
   background-color: rgb(59, 56, 56);
-  height: 300px;
+
   border-radius: 5px;
-  padding: 50px 70px;
+  padding: 100px;
   width: calc(100% - 20px);
-  position: absolute;
 }
 img.box1 {
   position: relative;
@@ -74,44 +86,92 @@ img.box2 {
   bottom: 200px;
   left: 130px;
 }
-.footer img {
-  width: 40px;
-  height: 40px;
-}
-img.footer1 {
-  position: absolute;
-  left: 100px;
-  top: 20px;
-}
-img.footer2 {
-  position: absolute;
-  left: 50px;
-}
-img.footer3 {
-  position: absolute;
-  bottom: 50px;
-  left: 250px;
-}
-img.footer4 {
-  position: absolute;
-  bottom: 50px;
-  right: 130px;
-}
-img.footer5 {
-  position: absolute;
-  top: 20px;
+img.main3-1 {
+  position: relative;
+  bottom: 100px;
   right: 150px;
 }
-img.footer6 {
-  position: absolute;
-  right: 30px;
+img.main3-2 {
+  position: relative;
   bottom: 150px;
+}
+img.main3-3 {
+  position: relative;
+  bottom: 160px;
+  left: 70px;
+}
+img.main3-4 {
+  position: relative;
+  top: 50px;
+  right: 70px;
+}
+img.main3-5 {
+  position: relative;
+  top: 50px;
+}
+img.main3-6 {
+  position: relative;
+  left: 180px;
+  bottom: 50px;
+}
+.session2 {
+  width: calc(100% - 50px);
+  padding: 20px;
+  border-bottom: 1px solid rgb(77, 75, 75);
+}
+.session2-img {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+.session2-img img {
+  width: 220px;
+}
+.session2-input {
+  display: flex;
+  justify-content: center;
+}
+.session3-header {
+  text-align: center;
+  margin: 50px;
+}
+.session3-message {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.message {
+  width: 300px;
+  background-color: rgb(76, 76, 74);
+  padding: 20px;
+  margin: 10px;
+}
+.backgroud-img {
+  position: relative;
+  bottom: 140px;
+}
+.session4 {
+  background-color: rgb(88, 88, 201);
+  text-align: center;
+  padding: 50px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.footer img {
+  margin: 10px;
 }
 @media (max-width: 768px) {
   ul {
     display: none;
   }
   input {
+    width: 100%;
+  }
+  .main1 img {
     width: calc(100% - 20px);
   }
   img.box1 {
@@ -123,8 +183,24 @@ img.footer6 {
   .box > div {
     width: calc(100% - 20px);
   }
-  .footer > img {
+  .main3 > img {
     width: 30px;
     height: 30px;
+  }
+  .main3 {
+    width: 100%;
+  }
+  .main3 h2 {
+    padding: 20px;
+    margin: 20px;
+  }
+  .session2-img {
+    width: 100%;
+  }
+  div.message {
+    width: 100%;
+  }
+  .footer {
+    display: none;
   }
 }
