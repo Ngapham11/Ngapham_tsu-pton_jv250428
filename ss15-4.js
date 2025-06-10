@@ -1,0 +1,10 @@
+let arr = [];
+arr[0] = prompt(`Hay nhap vao so nguyen bat ki:`);
+arr[1] = prompt(`Hay nhap vao so nguyen bat ki:`);
+arr[2] = prompt(`Hay nhap vao so nguyen bat ki:`);
+arr[3] = prompt(`Hay nhap vao so nguyen bat ki:`);
+arr[4] = prompt(`Hay nhap vao so nguyen bat ki:`);
+arr[5] = prompt(`Hay nhap vao so nguyen bat ki:`);
+console.log(arr);
+let arr1 = arr.reverse();
+console.log(arr1);
