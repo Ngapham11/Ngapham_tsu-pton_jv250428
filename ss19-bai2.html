@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./ss19-bai2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Management</h1>
+      <form id="form">
+        <input type="hidden" name="courseId" id="courseId" />
+        <div class="ip ip1">
+          <input
+            class="header content"
+            type="text"
+            id="content"
+            name="content"
+            placeholder="content"
+          />
+        </div>
+        <div class="ip ip2">
+          <input id="dueDate" class="header date" type="date" name="Date" />
+        </div>
+        <div class="ip ip3">
+          <select class="header status" name="status" id="status">
+            <option value="Choose status">Choose status</option>
+            <option value="Pending">Pending</option>
+            <option value="Complete">Complete</option>
+          </select>
+        </div>
+        <div class="ip ip4">
+          <input
+            class="header username"
+            type="text"
+            name="assignedTo"
+            id="assignedTo"
+            placeholder="Username"
+          />
+        </div>
+        <div class="ip ip5">
+          <button class="header submit" type="submit" id="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+      <div class="table" id="table">
+        <table>
+          <thead class="th">
+            <th>#</th>
+            <th>Content</th>
+            <th>Due date</th>
+            <th>Status</th>
+            <th>Assigned</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="tdpush"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./ss19-bai2.js"></script>
+  </body>
+</html>

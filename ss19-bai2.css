@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div.container {
+  width: 1000px;
+}
+h1 {
+  text-align: center;
+}
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(197, 194, 194);
+}
+.ip {
+  margin: 5px;
+}
+.submit {
+  width: 100px;
+}
+.submit:hover {
+  background-color: rgb(50, 96, 224);
+}
+table {
+  width: calc(100% - 120px);
+  margin: 10px;
+  text-align: center;
+}
+th {
+  background-color: rgb(220, 220, 206);
+  padding: 10px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+td {
+  border-bottom: 1px solid rgb(202, 197, 197);
+}
+button {
+  width: 50px;
+  margin: 10px;
+}
