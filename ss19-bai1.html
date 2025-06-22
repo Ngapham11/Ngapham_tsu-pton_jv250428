@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      div.container {
+        width: 500px;
+        padding: 30px;
+      }
+      h1 {
+        text-align: center;
+      }
+      input {
+        padding: 10px;
+        width: 100%;
+        outline: none;
+      }
+      div.form {
+        color: rgb(154, 150, 150);
+      }
+      input.sb:hover {
+        background-color: rgb(49, 156, 244);
+      }
+      small {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <div class="form">
+        <form action="#" id="form">
+          <label for="email"> Email:</label><br />
+          <input
+            id="email"
+            type="text"
+            name="Email"
+            placeholder="Enter your email address"
+          />
+          <small id="errorEmail"></small><br /><br />
+          <label for="password">Password:</label><br />
+          <input
+            class="inputpassword"
+            id="password"
+            type="text"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <small id="errorPw"></small><br /><br />
+          <label for="inputConfirm">Confirm Password:</label><br />
+          <input
+            class="inputConfirm"
+            id="inputConfirm"
+            type="text"
+            name="inputConfirm"
+            placeholder="Enter your confirm password"
+          />
+          <small id="errorConfirmPw"></small><br /><br />
+          <input class="sb" id="submit" type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+    <script src="./ss19-bai1.js"></script>
+  </body>
+</html>
