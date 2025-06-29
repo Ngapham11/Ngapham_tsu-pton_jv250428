@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css//reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/editUses.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="header-content1">
+        <div class="imgHeader">
+          <img
+            class="imgHeader"
+            src="../assets/assets/trello-logo-full.png.png"
+            alt="logo"
+          />
+        </div>
+        <div class="headerRight"></div>
+      </div>
+      <div class="main">
+        <div class="main_nav">
+          <p>your dashboard</p>
+          <ul>
+            <li>
+              <img src="../assets/assets/book.png" alt="" /><a
+                href="http://127.0.0.1:5500/project-root/pages/Dashboard.html"
+                >User dashboard</a
+              >
+            </li>
+            <li>
+              <img src="../assets/assets/star.png" alt="" /><a
+                class="newUser"
+                href="http://127.0.0.1:5500/project-root/pages/addnewuserLayout.html"
+                >Add new user</a
+              >
+            </li>
+            <hr />
+            <li>
+              <img src="../assets/assets/door.png" alt="" /><a
+                href="http://127.0.0.1:5500/project-root/pages/signin.html"
+                >Sign out</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="usermagement">
+          <img src="../assets/assets/book black.png" alt="" />
+          <span>User Management</span>
+          <hr />
+
+          <div class="main-body">
+            <h2>Add new user</h2>
+
+            <form action="" class="form" id="form">
+              <div class="form-Main1">
+                <div>
+                  <label for="userCode">User code</label><br />
+                  <input
+                    type="text"
+                    class="current UserCode"
+                    id="userCode"
+                  /><br />
+                  <small id="erroruserCode"></small><br />
+                  <label for="Email">Email</label><br />
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="current Email"
+                  />
+                  <small id="errorEmail"></small><br />
+                </div>
+                <div>
+                  <label for="userName">User name</label><br />
+                  <input
+                    type="text"
+                    class="current UserName"
+                    id="userName"
+                  /><br />
+                  <small id="errorUserName"></small><br />
+                  <label for="Password">Password</label><br />
+
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="current Password"
+                  />
+                  <small id="errorPassword"></small>
+                </div>
+              </div>
+              <div class="form-Main2">
+                <div class="Role">
+                  <label for="Role">Role</label><br />
+                  <select id="Role" size="1">
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="USER">USER</option>
+                  </select>
+                  <small id="Role"></small>
+                </div>
+                <div class="Birthday">
+                  <label for="Birthday">Brithday</label><br />
+                  <input
+                    type="date"
+                    name="Birthday"
+                    id="birthday"
+                    placeholder="30/01/1995"
+                    size="1"
+                  />
+                  <small id="Brithday"></small>
+                </div>
+                <div class="Status">
+                  <label for="">Status</label><br /><br />
+                  <input type="checkbox" name="Active" id="Status1" />
+                  <label for="Active" class="checkbox">Active</label>
+                  <input type="checkbox" name="Deactivate" id="Status2" />
+                  <label for="Deactivate" class="checkbox">Deactivate</label>
+                  <small id="Status"></small>
+                </div>
+              </div>
+              <div class="Description">
+                <label for="Description">Description</label><br />
+                <textarea id="Description"></textarea>
+              </div>
+            
+          </div>
+          <div class="footer">
+            <button type="submit" id="Back" class="btn-Back">Back</button>
+            <button type="submit" id="Save" class="btn-Save">Save</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../js/editUses.js"></script>
+  </body>
+</html>
