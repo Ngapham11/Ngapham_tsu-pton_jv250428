@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css//reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="
+    
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="../css/Dashboard.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="header-content1">
+        <div class="imgHeader">
+          <img
+            class="imgHeader"
+            src="../assets/assets/trello-logo-full.png.png"
+            alt="logo"
+          />
+        </div>
+        <div class="headerRight"></div>
+      </div>
+      <div class="main">
+        <div class="main_nav">
+          <p>your dashboard</p>
+          <ul>
+            <li>
+              <img src="../assets/assets/book.png" alt="" /><a
+                href="http://127.0.0.1:5500/project-root/pages/Dashboard.html"
+                >User dashboard</a
+              >
+            </li>
+            <li>
+              <img src="../assets/assets/star.png" alt="" /><a
+                class="newUser"
+                href="http://127.0.0.1:5500/project-root/pages/addnewuserLayout.html"
+                >Add new user</a
+              >
+            </li>
+            <hr />
+            <li>
+              <img src="../assets/assets/door.png" alt="" /><a
+                href="http://127.0.0.1:5500/project-root/pages/signin.html"
+                >Sign out</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="usermagement">
+          <img src="../assets/assets/book black.png" alt="" />
+          <span>User Management</span>
+          <hr />
+
+          <div class="main-body">
+            <div class="search_box">
+              <form class="search_box">
+                <input
+                  type="text"
+                  name="search"
+                  id="search_text"
+                  placeholder="Search user by name"
+                />
+                <button class="search_btn">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
+            <div class="useDashboard">
+              <table>
+                <thead id="th">
+                  <tr>
+                    <th>User code</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Brithday</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/Dashboard.js"></script>
+  </body>
+</html>
