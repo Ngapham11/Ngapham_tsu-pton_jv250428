@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(180, 9%, 98%);
+
+  display: flex;
+  justify-content: center;
+
+  height: 100vh;
+  font-family: roboto;
+}
+.container {
+  margin-top: 50px;
+  width: 1450px;
+  margin: 40px;
+}
+.header-content1 {
+  display: flex;
+
+  height: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+}
+.headerRight {
+  border-left: 1px solid rgba(222, 226, 230, 1);
+}
+div.imgHeader {
+  width: 25%;
+}
+img.imgHeader {
+  padding: 15px 30px 5px 20px;
+}
+.main {
+  display: flex;
+}
+.main_nav {
+  width: 25%;
+  border: 1px solid rgba(222, 226, 230, 1);
+  padding: 10px;
+}
+.main_nav p {
+  font-size: 18px;
+  line-height: 40px;
+  letter-spacing: 0%;
+  margin-top: 30px;
+  color: rgba(33, 37, 41, 0.75);
+
+  text-transform: uppercase;
+}
+.main_nav li {
+  margin: 20px;
+}
+a {
+  text-decoration: none;
+  color: rgba(13, 110, 253, 1);
+}
+span {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 38px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.usermagement img {
+  position: relative;
+  top: 10px;
+}
+.usermagement {
+  width: 75%;
+  padding: 20px;
+  border: 1px solid rgba(222, 226, 230, 1);
+}
+hr {
+  color: rgb(165, 161, 161);
+}
+.form-Main1 {
+  display: flex;
+}
+.error {
+  font-size: 10px;
+  color: red;
+}
+input {
+  border: 1px solid rgba(208, 213, 221, 1);
+  padding: 5px 8px;
+  font-size: 17px;
+}
+h2 {
+  padding: 20px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+.form-Main1 input {
+  width: 400px;
+  height: 44px;
+  top: 33px;
+  border-radius: 5px;
+  border-width: 1px;
+  gap: 8px;
+  margin: 10px;
+  outline: none;
+}
+.form-Main2 {
+  display: flex;
+}
+#Role,
+#birthday {
+  width: 200px;
+  height: 44px;
+  top: 346px;
+  left: 54px;
+  border-radius: 5px;
+  gap: 8px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  margin: 10px;
+  outline: none;
+}
+.Status {
+  margin-left: 10px;
+}
+.checkbox {
+  margin: 15px;
+}
+.Description textarea {
+  width: 820px;
+  margin: 10px;
+  width: 1094;
+  height: 92px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  border-radius: 5px;
+  outline: none;
+  gap: 8px;
+  padding: 5px 8px;
+  font-size: 17px;
+}
+.footer button {
+  border: 1px solid rgba(228, 228, 231, 1);
+  width: 79px;
+  height: 44px;
+  border-radius: 5px;
+  gap: 8px;
+  margin: 10px;
+  outline: none;
+}
+.footer button:hover {
+  background-color: rgb(84, 149, 234);
+  color: white;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
