@@ -1,5 +1,5 @@
 //lay thong tin tu tren local ve
-let users = JSON.parse(localStorage.getItem(`users`));
+let users = JSON.parse(localStorage.getItem(`users`)) || [];
 console.log(users);
 
 //in du lieu
@@ -17,7 +17,7 @@ function renderTodo() {
 <td>${element.email}</td>
 <td>${element.Role}</td>
 <td>${element.brithday}</td>
-<td>${element.Status}</td>
+<td>${element.status}</td>
 <td><button id=${element.userCode} class="btn-delete"><i class="fa-solid fa-trash"></i></button>
 <button id=${element.userCode} class="btn-edit"><i class="fa-solid fa-pen"></i></button>
 </td>`;

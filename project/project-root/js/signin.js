@@ -20,6 +20,6 @@ form.addEventListener(`submit`, function (e) {
     alert(`Dang nhap khong thanh cong`);
   } else {
     alert(`Dang nhap thanh cong`);
-    window.location.href = ``;
+    window.location.href = `http://127.0.0.1:5500/project-root/pages/Dashboard.html`;
   }
 });

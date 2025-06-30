@@ -14,7 +14,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="header-content1">
         <div class="imgHeader">
           <img
@@ -84,7 +84,7 @@
                   <label for="userName">User name</label><br />
                   <input
                     type="text"
-                    class="current UserName"
+                    class="currentUserName"
                     id="userName"
                   /><br /><small id="errorUserName" class="error"></small><br />
                   <label for="Password">Password</label><br />
@@ -120,14 +120,20 @@
                 </div>
                 <div class="Status" id="checkbox">
                   <label for="">Status</label><br /><br />
-                  <input type="checkbox" name="Active" id="Status1" />
-                  <label for="Active" class="checkbox" vlue="Active"
-                    >Active</label
-                  >
-                  <input type="checkbox" name="Deactivate" id="Status2" />
-                  <label for="Deactivate" class="checkbox" vlue="Deactivate"
-                    >Deactivate</label
-                  >
+                  <input
+                    type="checkbox"
+                    name="Active"
+                    id="Status1"
+                    value="Active"
+                  />
+                  <label for="Active" class="checkbox">Active</label>
+                  <input
+                    type="checkbox"
+                    name="Deactivate"
+                    id="Status2"
+                    value="Deactivate"
+                  />
+                  <label for="Deactivate" class="checkbox">Deactivate</label>
                 </div>
                 <small id="errorCheckbox" class="error"></small><br />
               </div>
@@ -138,8 +144,8 @@
             </form>
           </div>
           <div class="footer">
-            <button type="submit" id="Back">Back</button>
-            <button type="submit" id="Add">Add+</button>
+            <button type="submit" id="Back" class="Back">Back</button>
+            <button type="submit" id="Add" class="Add">Add+</button>
           </div>
         </div>
       </div>

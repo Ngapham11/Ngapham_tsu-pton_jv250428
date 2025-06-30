@@ -6,7 +6,7 @@ form.addEventListener(`submit`, function (e) {
   e.preventDefault();
   //the input
   let email = document.getElementById(`email`).value;
-  let username = document.getElementById(`username`).value;
+  let userName = document.getElementById(`username`).value;
   let password = document.getElementById(`password`).value;
   //the thong bao loi
   let emailError = document.getElementById(`errorEmail`);
@@ -24,7 +24,7 @@ form.addEventListener(`submit`, function (e) {
     emailError.innerHTML = `Email ban nhap khong hop le`;
     itValid = false;
   }
-  if (!usernameRegex.test(username)) {
+  if (!usernameRegex.test(userName)) {
     usernameError.innerHTML = `Username ban nhap khong hop le`;
     itValid = false;
   }
@@ -34,12 +34,13 @@ form.addEventListener(`submit`, function (e) {
   }
   if (itValid) {
     let newUsers = {
-      id: users.length + 1,
-
-      username: username,
+      userCode: `TR00` + (users.length + 1),
+      userName: userName,
       email: email,
       password: password,
       status: true,
+      Role: User,
+      birthday: 1 / 1 / 2010,
     };
     users.push(newUsers);
     localStorage.setItem("users", JSON.stringify(users));
