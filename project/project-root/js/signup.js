@@ -1,18 +1,15 @@
-//lay thong tin dang ki nguoi dung
-//1-Truy van form va gan su kien
 let users = JSON.parse(localStorage.getItem("users")) || [];
 let form = document.getElementById(`form`);
 form.addEventListener(`submit`, function (e) {
   e.preventDefault();
-  //the input
   let email = document.getElementById(`email`).value;
   let userName = document.getElementById(`username`).value;
   let password = document.getElementById(`password`).value;
-  //the thong bao loi
+
   let emailError = document.getElementById(`errorEmail`);
   let usernameError = document.getElementById(`errorUsername`);
   let passwordError = document.getElementById(`errorPassword`);
-  //dieu kien trong o input
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const usernameRegex = /^[a-zA-Z0-9_]{4,16}$/;
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
@@ -34,13 +31,13 @@ form.addEventListener(`submit`, function (e) {
   }
   if (itValid) {
     let newUsers = {
-      userCode: `TR00` + (users.length + 1),
+      userCode: Math.floor(Math.random() * 1000),
       userName: userName,
       email: email,
       password: password,
-      status: true,
-      Role: User,
-      birthday: 1 / 1 / 2010,
+      status: `Active`,
+      Role: ` User`,
+      birthday: `1 / 1 / 2010`,
     };
     users.push(newUsers);
     localStorage.setItem("users", JSON.stringify(users));
