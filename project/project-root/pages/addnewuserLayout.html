@@ -119,17 +119,19 @@
                   <small id="errorBirthday" class="error"></small><br />
                 </div>
                 <div class="Status" id="checkbox">
-                  <label for="">Status</label><br /><br />
+                  <label for="Status">Status</label><br /><br />
                   <input
-                    type="checkbox"
-                    name="Active"
+                    type="radio"
+                    name="Status"
+                    onclick="myFunction(this.value)"
                     id="Status1"
                     value="Active"
                   />
-                  <label for="Active" class="checkbox">Active</label>
+                  <label for="Status" class="checkbox">Active</label>
                   <input
-                    type="checkbox"
-                    name="Deactivate"
+                    type="radio"
+                    name="Status"
+                    onclick="myFunction(this.value)"
                     id="Status2"
                     value="Deactivate"
                   />

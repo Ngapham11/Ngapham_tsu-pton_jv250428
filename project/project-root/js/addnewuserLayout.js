@@ -4,8 +4,13 @@ let container = document.getElementById(`container`);
 let Add = document.getElementById(`Add`);
 let inputUserCode = document.getElementById(`userCode`);
 inputUserCode.addEventListener(`click`, function () {
-  document.getElementById(`userCode`).value = Math.floor(Math.random() * 1000);
+  document.getElementById(`userCode`).value = Math.floor(Math.random() * 10000);
 });
+let checkvalue = ``;
+function myFunction(Status) {
+  checkvalue = Status;
+}
+
 Add.addEventListener(`click`, function (e) {
   e.preventDefault();
   let userCode = document.getElementById(`userCode`).value;
@@ -14,13 +19,6 @@ Add.addEventListener(`click`, function (e) {
   let Role = document.getElementById(`Role`).value;
   let birthday = document.getElementById(`birthday`).value;
   let email = document.getElementById(`email`).value;
-  let status = document.forms[0];
-  let checkvalue = "";
-  for (let i = 0; i < status.length; i++) {
-    if (status[i].checked) {
-      checkvalue = checkvalue + status[i].value;
-    }
-  }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const usernameRegex = /^[a-zA-Z0-9_]{4,16}$/;
@@ -55,7 +53,7 @@ Add.addEventListener(`click`, function (e) {
       email: email,
       status: checkvalue,
     };
-    alert(`Dang nhap thanh cong`);
+    alert(`Da them thanh vien`);
     users.push(newUsers);
     localStorage.setItem(`users`, JSON.stringify(users));
   }
@@ -65,6 +63,9 @@ Add.addEventListener(`click`, function (e) {
   document.getElementById(`Role`).value = ``;
   document.getElementById(`birthday`).value = ``;
   document.getElementById(`email`).value = ``;
+  document.getElementById("Status1").checked = false;
+  document.getElementById("Status2").checked = false;
+  window.location.href = `http://127.0.0.1:5500/project-root/pages/Dashboard.html`;
 });
 
 let Back = document.getElementById(`Back`);

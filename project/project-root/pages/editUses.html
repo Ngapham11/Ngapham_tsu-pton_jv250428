@@ -120,10 +120,10 @@
                 </div>
                 <div class="Status">
                   <label for="">Status</label><br /><br />
-                  <input type="checkbox" name="Active" id="Status1" />
-                  <label for="Active" class="checkbox">Active</label>
-                  <input type="checkbox" name="Deactivate" id="Status2" />
-                  <label for="Deactivate" class="checkbox">Deactivate</label>
+                  <input type="radio" name="Status" onclick="myFunction(this.value)" id="Status1" value="Active"/>
+                  <label for="Status" class="checkbox">Active</label>
+                  <input type="radio" name="Status" onclick="myFunction(this.value)" id="Status2" value="Deactivate"/>
+                  <label for="Status" class="checkbox">Deactivate</label>
                   <small id="Status"></small>
                 </div>
               </div>

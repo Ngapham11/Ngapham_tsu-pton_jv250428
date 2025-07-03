@@ -6,6 +6,11 @@ let btnSave = document.getElementById(`Save`);
 console.log(btnSave);
 let btnBack = document.getElementById(`Back`);
 let inputCode = document.getElementById(`userCode`);
+let checkvalue = ``;
+function myFunction(Status) {
+  checkvalue = Status;
+}
+
 inputCode.addEventListener(`click`, function () {
   document.getElementById(`userCode`).value = usersItem.userCode;
   document.getElementById(`userName`).value = usersItem.userName;
@@ -23,16 +28,6 @@ btnSave.addEventListener(`click`, function (e) {
   let Role = document.getElementById(`Role`).value;
   let birthday = document.getElementById(`birthday`).value;
   let email = document.getElementById(`email`).value;
-
-  let status = document.forms[0];
-  let checkvalue = "";
-  for (let i = 0; i < status.length; i++) {
-    if (status[i].checked) {
-      checkvalue = checkvalue + status[i].value;
-
-      console.log(checkvalue);
-    }
-  }
 
   let errorEmail = document.getElementById(`errorEmail`);
   let errorPassword = document.getElementById(`errorPassword`);
@@ -69,7 +64,7 @@ btnSave.addEventListener(`click`, function (e) {
     usersItem.password = password;
     usersItem.email = email;
     let usersItemIndex = users.findIndex(
-      (user) => user.userCode == usersItem.userCode
+      (user) => Number(user.userCode) == Number(usersItem.userCode)
     );
     users[usersItemIndex] = usersItem;
     localStorage.setItem(`usersItem`, JSON.stringify(usersItem));
@@ -81,7 +76,9 @@ btnSave.addEventListener(`click`, function (e) {
   document.getElementById(`Role`).value = ``;
   document.getElementById(`birthday`).value = ``;
   document.getElementById(`password`).value = ``;
-  status = ``;
+  document.getElementById("Status1").checked = false;
+  document.getElementById("Status2").checked = false;
+  window.location.href = `http://127.0.0.1:5500/project-root/pages/Dashboard.html`;
 });
 
 btnBack.addEventListener(`click`, function (e) {
