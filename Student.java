@@ -1,34 +1,67 @@
-public class Student {
-    private  String name;
-    private int age;
-    private String className;
-    private double avgScore;
+package SS9.bai1;
 
-    public Student(String name, int age, String className, double avgScore) {
-        this.name = name;
+import java.util.Scanner;
+
+public class Student {
+    private String studentCode;
+    private String studentName;
+    private int age;
+    private String major;
+
+    public Student() {
+    };
+
+    public Student(String studentCode, String studentName, int age, String major) {
+        this.studentCode = studentCode;
+        this.studentName = studentName;
         this.age = age;
-        this.className = className;
-        this.avgScore = avgScore;
+        this.major = major;
     }
 
-    public String getName() {
-        return name;
+    public String getStudentCode() {
+        return studentCode;
+    }
+
+    public String getStudentName() {
+        return studentName;
     }
 
     public int getAge() {
         return age;
     }
 
-    public String getClassStudent() {
-        return className;
+    public String getMajor() {
+        return major;
     }
 
-    public double getAvgScore() {
-        return avgScore;
+    public void setStudentCode(String studentCode) {
+        this.studentCode = studentCode;
     }
 
-    @Override
-    public String toString() {
-        return "Tên: " + name + ", Tuổi: " + age + ", Lớp: " + className + ", Điểm trung bình: " + avgScore;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+    //phuong thuc nhap thong tin
+    public void inputData(Scanner scanner){
+        System.out.println("Nhap vao ma sinh vien :");
+        this.studentCode=scanner.nextLine();
+        System.out.println("Nhap vao ten sinh vien :");
+        this.studentName=scanner.nextLine();
+        System.out.println("Nhap vao tuoi sinh vien :");
+        this.age=Integer.parseInt(scanner.nextLine());
+        System.out.println("Nhap vao chuyen nghanh :");
+        this.major=scanner.nextLine();
+    }
+    public void displayData(){
+        System.out.printf("Ma sinh vien : %s,Ten sinh vien : %s,Tuoi sinh vien la : %d,Chuyen nghanh la :%s\n"
+                ,this.studentCode,this.studentName,this.age,this.major);
     }
 }
