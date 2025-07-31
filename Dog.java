@@ -1,30 +1,15 @@
-package SS8.bai1;
+package SS9.bai2;
 
-public class Dog extends Animals {
-    private String breed;
-    public Dog(String name, int age,String breed) {
-        super(name, age);
-        this.breed = breed;
+public class Dog extends Pet{
+    public Dog() {
+    }
 
+    public Dog(String petId, String petName, int age) {
+        super(petId, petName, age);
     }
 
     @Override
-    public void makeSound() {
-        System.out.println("Keu la : Woof Woof");
-    }
-    @Override
-    public void displayInfo(){
-        super.displayInfo();
-        System.out.println("Giong cho la "+breed);
-    }
-
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
+    public void speak() {
+        System.out.println("Gau gau");
     }
 }
-

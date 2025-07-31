@@ -1,27 +1,15 @@
-package SS8.bai1;
+package SS9.bai2;
 
-public class Cat extends Animals {
-    private String furColor;
-    public Cat(String name, int age,String furColor) {
-        super(name, age);
-        this.furColor=furColor;
+public class Cat extends Pet{
+    public Cat() {
+    }
+
+    public Cat(String petId, String petName, int age) {
+        super(petId, petName, age);
     }
 
     @Override
-    public void makeSound() {
-        System.out.println("Keu la : Meo meo");
-    }
-    @Override
-    public void displayInfo(){
-        super.displayInfo();
-        System.out.println("Mau long la : "+furColor);
-    }
-
-    public String getFurColor() {
-        return furColor;
-    }
-
-    public void setFurColor(String furColor) {
-        this.furColor = furColor;
+    public void speak() {
+        System.out.println("Meo meo");
     }
 }

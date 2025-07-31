@@ -48,7 +48,9 @@ public abstract class Pet {
         do {
             String petId=scanner.nextLine();
          if (Pattern.matches(petIdRegex,petId)){
+
              this.petId=petId;
+             break;
          }else {
              System.err.println("Ma thu cung phai 4 ky tu,bat dau bang C hoac D,3 ky tu sau la so ");
          }
@@ -58,7 +60,7 @@ public abstract class Pet {
         this.age=Integer.parseInt(scanner.nextLine());
     }
     public void displayData(){
-        System.out.printf("Ten la : %s- Ma la : %s -Tuoi la : %d",this.petName,this.petId,this.age);
+        System.out.printf("Ten la : %s- Ma la : %s - Tuoi la : %d\n",this.petName,this.petId,this.age);
     }
-    public speak();
+    public abstract void speak();
 }
