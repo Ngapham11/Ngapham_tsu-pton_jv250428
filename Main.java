@@ -1,15 +1,35 @@
-package SS8.bai4;
+package SS10.bai1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        BankAccount kh1=new BankAccount("01","Minh","01234567");
-        BankAccount kh2=new BankAccount("02","khanh","01253453");
-        double transferAmount=300;
-     kh1.deposit(1000);
-     kh1.withdraw(300);
-     kh1.displayBalance();
-     kh2.deposit(300);
-     kh2.displayBalance();
+    public static  List<Student> studentList=new ArrayList<>();
+    public  static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String choice;
+       do {
+           String name=InputData.inputName(scanner);
+           int age=InputData.inputAge(scanner);
+           double score=InputData.inputScore(scanner);
+           Student student=new Student(name,age,score);
+           studentList.add(student);
+           System.out.print("Bạn có muốn nhập thêm sinh viên không? (Y/N): ");
+           choice = scanner.nextLine();
+
+
+       }while (choice.equalsIgnoreCase("Y"));
+        displayStudentList();
     }
 
+    public static void displayStudentList(){
+        if (studentList.isEmpty()){
+            System.out.println("Danh sach rong");
+        }else {
+            for (Student student : studentList) {
+                student.displayStudent();
+            }
+        }
+    }
 }
