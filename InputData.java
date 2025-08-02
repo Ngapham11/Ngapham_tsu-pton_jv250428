@@ -1,45 +1,40 @@
-package SS10.bai2;
+package SS10.bai3;
 
 import java.util.Scanner;
 
 public class InputData {
-    public static String inputBookName(Scanner scanner){
+    public static String inputUserName(Scanner scanner){
+        System.out.println("Moi ban nhap ten");
         String input="";
-        do {
-            System.out.println("Moi ban nhap ten sach");
-            input=scanner.nextLine();
+        try {input=scanner.nextLine();
             if (input.isEmpty()){
                 System.out.println("Vui long khong de trong");
             }
-        }while (input.isEmpty());
-        return input;
+        }catch (Exception e){
+            System.out.println("Vui long khong de trong");
+        }return input;
     }
-    public static String inputAuthor(Scanner scanner){
+    public static String inputEmail(Scanner scanner){
+        System.out.println("Moi ban nhap email");
         String input="";
-        do {
-            System.out.println("Moi ban nhap ten tac gia");
-            input=scanner.nextLine();
+        try {input=scanner.nextLine();
             if (input.isEmpty()){
                 System.out.println("Vui long khong de trong");
             }
-        }while (input.isEmpty());
-        return input;
+        }catch (Exception e){
+            System.out.println("Vui long khong de trong");
+        }return input;
     }
-    public static int inputPublishYear(Scanner scanner){
-       String input;
-       do {
-           System.out.println("Moi ban nhap nam san xuat :");
-           input=scanner.nextLine();
-           try {
-               if (input.isEmpty()){
-                   System.out.println("Vui long khong duoc de trong");
-               } else if (Integer.parseInt(input)<=0) {
-                   System.out.println("vui long nhap dung so nam");
-               }else break;
-           }catch (Exception e){
-               System.out.println("Vui long nhap dung so nam");
-           }
-       }while (true);
-       return Integer.parseInt(input);
+    public static String inputTelephon(Scanner scanner){
+        System.out.println("Moi ban nhap so dien thoai");
+        String input="";
+        try {input=scanner.nextLine();
+            if (input.isEmpty()){
+                System.out.println("Vui long khong de trong");
+            }
+        }catch (Exception e){
+            System.out.println("Vui long khong de trong");
+        }return input;
     }
+
 }
