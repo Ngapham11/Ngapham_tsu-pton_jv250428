@@ -1,42 +1,42 @@
-public class Book {
-    private String title;
+package SS10.bai2;
+
+public class Book { private String bookName;
     private String author;
-    private double price;
+    private int publishYear;
+
+    public Book(String bookName, String author, int publishYear) {
+        this.bookName = bookName;
+        this.author = author;
+        this.publishYear = publishYear;
+    }
 
     public Book() {
-        title = "";
-        author = "";
-        price = 0;
     }
 
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setPrice(double price) {
-        if (price<0){
-            System.out.println("gia tien khong hop le");
-
-        }else  this.price=price;;
-
-    }
-
-    public String getTitle() {
-        return title;
+    public String getBookName() {
+        return bookName;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public double getPrice() {
-        return price;
+    public int getPublishYear() {
+        return publishYear;
     }
 
-}
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublishYear(int publishYear) {
+        this.publishYear = publishYear;
+    }
+    public void displayBook(){
+        System.out.printf("Ten sach :%s--Tac gia :%s--Nam xuat ban :%d\n",this.bookName,this.author,this.publishYear);
+    }
+}
