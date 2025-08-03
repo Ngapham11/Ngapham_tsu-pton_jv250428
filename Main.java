@@ -1,18 +1,24 @@
-package SS11.bai1;
+package SS11.bai2;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer>numbers= Arrays.asList(1,2,3,4,5,6,7,8,9,10);
-        numbers.forEach(number->{
-            if (number%2==0){
-                System.out.println(number);
-            }
-        });
-        int sum = numbers.stream().mapToInt(Integer::intValue).sum();
-        System.out.println("Tổng của tất cả các số trong danh sách: " + sum);
+        List<Student>students= Arrays.asList(
+                new Student("Alice",20,8.5),
+                new Student("Bob",22,6.0),
+                new Student("Charlie",21,7.5),
+                new Student("David",23,9.0),
+                new Student("Eve",20,5.5),
+                new Student("Frank",22,8.0),
+                new Student("Grace",21,7.0)
+        );
+        List<Student>filteredStudents=students.stream()
+                .filter(student -> student.getGrade()>7)
+                .sorted(Comparator.comparing(Student::getName))
+                .toList();
+        filteredStudents.forEach(Student::displayStudent);
     }
 }
