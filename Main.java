@@ -1,61 +1,72 @@
-package SS10.bai4;
+package SS11.bai4;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-   public static List<Student>studentList=new ArrayList<>();
+    public static HashMap<Integer,Product>productHashMap=new HashMap<>();
+
     public static void main(String[] args) {
-        AttendanceManager manager=new AttendanceManager();
         Scanner scanner=new Scanner(System.in);
         do {
-            System.out.println("\n******MENU QUAN LY DIEM DANH*******\n" +
-                    "1.Them sinh vien\n" +
-                    "2.Sua sinh vien\n" +
-                    "3.Xoa sinh vien\n" +
-                    "4.Hien thi danh sach sinh vien\n" +
-                    "5.Thoat\n");
-            System.out.println("Hay chon 1-5");
+            System.out.println("****Product Management System****");
+            System.out.println("1.Add Product\n" +
+                    "2.Edit Product\n" +
+                    "3.Delete Product\n" +
+                    "4.Display Products\n" +
+                    "5.Filter Products(Price>100)\n" +
+                    "6.Total Value of Products\n" +
+                    "7.Thoat\n");
+            System.out.println("Moi ban chon 1-7");
             int choice=Integer.parseInt(scanner.nextLine());
             switch (choice){
-                case 1:
-                    System.out.println("Moi ban nhap ten :");
-                    String name=scanner.nextLine();
-                    System.out.println("Moi ban nhap ID :");
-                    int id=Integer.parseInt(scanner.nextLine());
-                    Student student=new Student(name,id);
-                    manager.add(student);
+                case 1:add(scanner);
                     break;
-                case 2:
-                    int index=-1;
-                    System.out.println("Nhap id sinh vien muon sua :");
-                    int updateId=Integer.parseInt(scanner.nextLine());
-                    for (int i=0;i<studentList.size();i++){
-                       if (studentList.get(i).getId()==updateId){
-                          index=i;
-                       }
-                    }if (index==-1){
-                    System.out.println("Khong tim thay sv can sua");
-                }else {
-                    System.out.println("Nhap ten :");
-                        String newName =scanner.nextLine();
-                    System.out.println("Nhap id :");
-                    int newId=Integer.parseInt(scanner.nextLine());
-                        manager.update(index,new Student(newName,newId));
-                }
+                case 2:editProduct(scanner);
                     break;
-                case 3:
+                case 3:deleteProduct(scanner);
                     break;
                 case 4:
                     break;
-                case 5:System.exit(0);
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    System.exit(0);
                     break;
                 default:
-                    System.err.println("Hay nhap tu 1-5");
+                    System.err.println("Hay chon 1-7");
             }
         }while (true);
-    }
-    //phuong thuc add
 
+    }public static void add(Scanner scanner){
+        System.out.println("Moi ban nhap id");
+        int id=Integer.parseInt(scanner.nextLine());
+        System.out.println("Moi ban nhap ten :");
+        String name=scanner.nextLine();
+        System.out.println("Moi ban nhap so tien :");
+        double price=Double.parseDouble(scanner.nextLine());
+        Product product=new Product(id,name,price);
+        productHashMap.put(id,product);
+    }
+    public static void editProduct(Scanner scanner){
+        System.out.println("Nhap vao id cua product muon sua :");
+        int id=Integer.parseInt(scanner.nextLine());
+        if (productHashMap.containsKey(id)){
+            System.out.println("Nhap thong tin muon sua");
+            System.out.println("Nhap ten:");
+            String name=scanner.nextLine();
+            System.out.println("Nhap gia tien :");
+            double price=Double.parseDouble(scanner.nextLine());
+            productHashMap.put(id,new Product(id,name,price));
+            System.out.println("Da them");
+        }else {
+            System.out.println("Khong tim thay product muon sua");
+        }
+    }public static void deleteProduct(Scanner scanner){
+        System.out.println("Nhap id cua product can xoa :");
+        int id=Integer.parseInt(scanner.nextLine());
+        productHashMap.remove(id);
+    }
 }
