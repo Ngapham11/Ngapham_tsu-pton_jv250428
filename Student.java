@@ -1,42 +1,38 @@
-package SS11.bai2;
+package SS10.bai4;
 
-public class Student {
-    private String name;
-    private int age;
-    private double grade;
+import java.util.Scanner;
 
-    public Student(String name, int age, double grade) {
-        this.name = name;
-        this.age = age;
-        this.grade = grade;
-    }
+public class Student{
+    private String studentName;
+private int id;
 
     public Student() {
     }
 
-    public String getName() {
-        return name;
+    public Student(String studentName, int id) {
+        this.studentName = studentName;
+        this.id = id;
     }
 
-    public int getAge() {
-        return age;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public double getGrade() {
-        return grade;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getId() {
+        return id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setGrade(double grade) {
-        this.grade = grade;
-    }public void displayStudent(){
-        System.out.printf("Name:%s--Age:%d--Grade:%f",this.name,this.age,this.grade);
+    @Override
+    public String toString() {
+        return "ID :"+id+"--Ten sinh vien :"+studentName;
     }
+
 }
