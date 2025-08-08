@@ -1,72 +1,56 @@
-package SS11.bai4;
+package Main;
 
-import java.util.HashMap;
+import business.ProductBusiness;
+import entity.Product;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static HashMap<Integer,Product>productHashMap=new HashMap<>();
-
+public static List<Product>products=new ArrayList<>();
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        do {
-            System.out.println("****Product Management System****");
-            System.out.println("1.Add Product\n" +
-                    "2.Edit Product\n" +
-                    "3.Delete Product\n" +
-                    "4.Display Products\n" +
-                    "5.Filter Products(Price>100)\n" +
-                    "6.Total Value of Products\n" +
-                    "7.Thoat\n");
-            System.out.println("Moi ban chon 1-7");
-            int choice=Integer.parseInt(scanner.nextLine());
-            switch (choice){
-                case 1:add(scanner);
-                    break;
-                case 2:editProduct(scanner);
-                    break;
-                case 3:deleteProduct(scanner);
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    System.exit(0);
-                    break;
-                default:
-                    System.err.println("Hay chon 1-7");
-            }
-        }while (true);
+        Product product=new Product();
+        ProductBusiness productBusiness=new ProductBusiness();
 
-    }public static void add(Scanner scanner){
-        System.out.println("Moi ban nhap id");
-        int id=Integer.parseInt(scanner.nextLine());
-        System.out.println("Moi ban nhap ten :");
-        String name=scanner.nextLine();
-        System.out.println("Moi ban nhap so tien :");
-        double price=Double.parseDouble(scanner.nextLine());
-        Product product=new Product(id,name,price);
-        productHashMap.put(id,product);
-    }
-    public static void editProduct(Scanner scanner){
-        System.out.println("Nhap vao id cua product muon sua :");
-        int id=Integer.parseInt(scanner.nextLine());
-        if (productHashMap.containsKey(id)){
-            System.out.println("Nhap thong tin muon sua");
-            System.out.println("Nhap ten:");
-            String name=scanner.nextLine();
-            System.out.println("Nhap gia tien :");
-            double price=Double.parseDouble(scanner.nextLine());
-            productHashMap.put(id,new Product(id,name,price));
-            System.out.println("Da them");
-        }else {
-            System.out.println("Khong tim thay product muon sua");
-        }
-    }public static void deleteProduct(Scanner scanner){
-        System.out.println("Nhap id cua product can xoa :");
-        int id=Integer.parseInt(scanner.nextLine());
-        productHashMap.remove(id);
-    }
+        Scanner scanner=new Scanner(System.in);
+       try {
+           do {
+               System.out.println("\n*********************QUẢN LÝ SẢN PHẨM********************\n" +
+                       "\n" +
+                       "1.Thêm sản phẩm\n" +
+                       "2.Danh sách sản phẩm\n" +
+                       "3.Cập nhật sản phẩm theo mã sản phẩm\n" +
+                       "4.Xóa sản phẩm theo mã sản phẩm\n" +
+                       "5.Tìm kiếm sản phẩm theo tên\n" +
+                       "6.Sắp xếp sản phẩm theo giá tăng dần\n" +
+                       "7.Sắp xếp sản phẩm theo số lượng giảm dần\n" +
+                       "8.Thoát");
+               System.out.println("Moi ban chon tu 1-8");
+               int choice=Integer.parseInt(scanner.nextLine());
+               switch (choice){
+                   case 1:productBusiness.createProduct(scanner);
+                       break;
+                   case 2:productBusiness.displayProduct();
+                       break;
+                   case 3:productBusiness.updateProduct(scanner,products);
+                       break;
+                   case 4:productBusiness.deleteProduct(scanner,products);
+                       break;
+                   case 5:productBusiness.findProducByProductName(scanner,products);
+                       break;
+                   case 6:productBusiness.sortProductUp(products);
+                       break;
+                   case 7:productBusiness.sortProductDown(products);
+                       break;
+                   case 8:System.exit(0);
+                       break;
+                   default:
+                       System.err.println("Hay nhap tu 1-8");
+               }
+           }while (true);
+       }catch (Exception e) {System.err.println("Ban nhap khong hop le");}
 }
+    }
