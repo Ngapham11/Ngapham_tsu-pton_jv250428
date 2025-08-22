@@ -1,56 +1,80 @@
-package Main;
+import ss16_bai1.dao.StudentDao;
+import ss16_bai1.dao.StudentDaoimpl;
+import ss16_bai1.entity.Student;
 
-import business.ProductBusiness;
-import entity.Product;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-public static List<Product>products=new ArrayList<>();
     public static void main(String[] args) {
-        Product product=new Product();
-        ProductBusiness productBusiness=new ProductBusiness();
-
         Scanner scanner=new Scanner(System.in);
-       try {
-           do {
-               System.out.println("\n*********************QUẢN LÝ SẢN PHẨM********************\n" +
-                       "\n" +
-                       "1.Thêm sản phẩm\n" +
-                       "2.Danh sách sản phẩm\n" +
-                       "3.Cập nhật sản phẩm theo mã sản phẩm\n" +
-                       "4.Xóa sản phẩm theo mã sản phẩm\n" +
-                       "5.Tìm kiếm sản phẩm theo tên\n" +
-                       "6.Sắp xếp sản phẩm theo giá tăng dần\n" +
-                       "7.Sắp xếp sản phẩm theo số lượng giảm dần\n" +
-                       "8.Thoát");
-               System.out.println("Moi ban chon tu 1-8");
-               int choice=Integer.parseInt(scanner.nextLine());
-               switch (choice){
-                   case 1:productBusiness.createProduct(scanner);
-                       break;
-                   case 2:productBusiness.displayProduct();
-                       break;
-                   case 3:productBusiness.updateProduct(scanner,products);
-                       break;
-                   case 4:productBusiness.deleteProduct(scanner,products);
-                       break;
-                   case 5:productBusiness.findProducByProductName(scanner,products);
-                       break;
-                   case 6:productBusiness.sortProductUp(products);
-                       break;
-                   case 7:productBusiness.sortProductDown(products);
-                       break;
-                   case 8:System.exit(0);
-                       break;
-                   default:
-                       System.err.println("Hay nhap tu 1-8");
-               }
-           }while (true);
-       }catch (Exception e) {System.err.println("Ban nhap khong hop le");}
-}
+        do {
+            System.out.println("Tạo chương trình Java với menu như sau:\n" +
+                    "1.Hiển thị danh sách sinh viên.\n" +
+                    "2.Thêm mới sinh viên.\n" +
+                    "3.Sửa sinh viên.\n" +
+                    "4.Xóa sinh viên.\n" +
+                    "5.Tìm kiếm sinh viên.\n" +
+                    "6.Thoát .");
+            System.out.println("Moi ban chon 1-6");
+            int choice=Integer.parseInt(scanner.nextLine());
+            switch (choice){
+                case 1:displayData();
+                    break;
+                case 2:createStudent(scanner);
+                    break;
+                case 3:updateStudent(scanner);
+                    break;
+                case 4:deleteStudent(scanner);
+                    break;
+                case 5:finfById(scanner);
+                    break;
+                case 6:System.exit(0);
+                break;
+                default:
+                    System.out.println("Moi ban chon 1-6");
+            }
+        }while (true);
     }
+    public static final StudentDao studentDao=new StudentDaoimpl();
+    public static void displayData(){
+       List<Student>students= studentDao.findAll();
+       students.forEach(System.out::println);
+    }
+    public static void createStudent(Scanner scanner){
+        Student student=new Student();
+        student.inputData(scanner);
+       if (studentDao.addStudent(student)){
+           System.out.println("Them thanh cong");
+       }else System.out.println("Them that bai");
+    }
+    public static void updateStudent(Scanner scanner){
+
+        System.out.println("Moi ban nhap studentId muon sua");
+        int id=Integer.parseInt(scanner.nextLine());
+      Student student =studentDao.findById(id);
+      if (student!=null){
+          student.inputData(scanner);
+          if (studentDao.updateStudent(student)){
+              System.out.println("Sua thanh cong");
+          }else System.out.println("Cap nhat that bai");
+      }else System.out.println("Khong tim thay");
+    }
+    public static void deleteStudent(Scanner scanner){
+        System.out.println("Moi ban nhap studentId muon sua");
+        int id=Integer.parseInt(scanner.nextLine());
+        Student student=studentDao.findById(id);
+        if (student!=null){
+           if (studentDao.deleteStudent(student)){
+               System.out.println("Xoa thanh cong");
+           }else System.out.println("Xoa that bai");;
+        }else System.out.println("Khong tim thay");
+    }public static void finfById(Scanner scanner){
+        System.out.println("Moi ban nhap vao id muon tim :");
+        int id=Integer.parseInt(scanner.nextLine());
+        Student student=studentDao.findById(id);
+        if (student==null){
+            System.out.println("Khong tim thay");
+        }else System.out.println(student);
+    }
+}
