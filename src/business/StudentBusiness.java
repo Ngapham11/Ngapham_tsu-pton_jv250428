@@ -26,4 +26,11 @@ public class StudentBusiness {
             System.out.println("Sua thanh cong");
         }else System.out.println("Sua that bai");
     }
+    public static void deleteByAge(Scanner scanner){
+        System.out.println("Ban muon xoa hoc sinh duoi bao nhieu tuoi ?");
+        int where_age=Integer.parseInt(scanner.nextLine());
+        if (studentDao.deleteByAge(where_age)){
+            System.out.println("Xoa thanh cong");
+        }else System.out.println("Xoa that bai");
+    }
 }

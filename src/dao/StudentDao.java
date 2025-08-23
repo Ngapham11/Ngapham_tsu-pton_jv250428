@@ -6,4 +6,5 @@ public interface StudentDao {
     boolean save(Student student);
     boolean update(Student student);
     Student findById(int id);
+    boolean deleteByAge(int where_age);
 }

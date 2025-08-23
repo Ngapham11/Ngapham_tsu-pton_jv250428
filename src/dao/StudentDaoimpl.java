@@ -76,4 +76,24 @@ Student student=null;
             ConnectionDB.closeConnection(con,callableStatement);
         }  return student;
     }
+
+    @Override
+    public boolean deleteByAge(int where_age) {
+        Connection con=null;
+        CallableStatement callableStatement=null;
+        boolean result=false;
+        try { con= ConnectionDB.openConnection();
+            con.setAutoCommit(false);
+         callableStatement=con.prepareCall("{call delete_by_age(?)}");
+            callableStatement.setInt(1,where_age);
+           callableStatement.executeUpdate();
+            con.commit();
+            result=true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            ConnectionDB.closeConnection(con,callableStatement);
+        }  return result;
+    }
 }

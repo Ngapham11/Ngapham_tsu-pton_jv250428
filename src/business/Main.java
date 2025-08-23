@@ -7,7 +7,7 @@ public class Main {
 
         Scanner scanner=new Scanner(System.in);
         //sua sv
-        StudentBusiness.updateStudent(scanner);
-
+//        StudentBusiness.updateStudent(scanner);
+StudentBusiness.deleteByAge(scanner);
     }
 }
