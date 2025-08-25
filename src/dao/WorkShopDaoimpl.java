@@ -129,7 +129,7 @@ callableStatement.setInt(1,id);
         List<WorkShop>workShops=new ArrayList<>();
 
         try {connection= ConnectionDB.openConnection();
-            callableStatement=connection.prepareCall("{call search_by_name()}");
+            callableStatement=connection.prepareCall("{call search_by_name(?)}");
             callableStatement.setString(1,name);
             ResultSet resultSet=callableStatement.executeQuery();
             while (resultSet.next()){
