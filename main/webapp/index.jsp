@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Time</title>
+    <title>Mondule3</title>
 </head>
 <body>
-<h3> Chao ban :</h3>
 <a href="time_now"> Thoi gian hien tai la :</a>
+<a href="userData"> UserData</a>
 </body>
 </html>
