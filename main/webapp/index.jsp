@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mondule3</title>
+    <title>JSP - Hello World</title>
 </head>
 <body>
-<a href="time_now"> Thoi gian hien tai la :</a><br>
-<a href="userData"> UserData</a><br>
-<a href="userData_03"> Customer Data</a><br>
-<a href="Rate_04">Chuyen doi ngoai te</a>
+<h1><%= "Hello World!" %>
+</h1>
+<br/>
+<a href="ss2_01Servlet">SS02_01</a><br>
+<a href="ss2_02Servlet">SS02_02</a>
 </body>
 </html>
