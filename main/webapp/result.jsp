@@ -13,8 +13,8 @@
 </head>
 <body>
 <h1>Ket qua tinh toan</h1>
-<c:choose>
-    <c:when test="${}"></c:when>
-</c:choose>
+<h2>Ket qua la :</h2>
+<h2>${result}</h2>
+<a href="ss2_03.jsp"></a>
 </body>
 </html>
