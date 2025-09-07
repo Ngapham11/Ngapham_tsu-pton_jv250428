@@ -9,6 +9,7 @@
 </h1>
 <br/>
 <a href="ss2_01Servlet">SS02_01</a><br>
-<a href="ss2_02Servlet">SS02_02</a>
+<a href="ss2_02Servlet">SS02_02</a><br>
+<a href="ss2_03Servlet">SS02_03</a>
 </body>
 </html>
