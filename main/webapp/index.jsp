@@ -9,6 +9,7 @@
 </h1>
 <br/>
 <a href="home">Bai 1</a><br>
-<a href="greeting">Bai 2</a>
+<a href="greeting">Bai 2</a><br>
+<a href="product">Bai3</a><br>
 </body>
 </html>
