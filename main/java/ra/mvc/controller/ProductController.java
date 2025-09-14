@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ra.mvc.model.entity.Product;
-import ra.mvc.model.entity.service.ProductService;
+import ra.mvc.model.service.ProductService;
 
 import java.util.List;
 @Controller
@@ -20,5 +20,11 @@ public class ProductController {
        List<Product>products=productService.getListProduct();
        model.addAttribute("products",products);
        return "product";
+    }
+    @RequestMapping("/search")
+    public String search_product(Model model, @RequestParam("name")String name){
+        List<Product>products=productService.searchProduct(name);
+        model.addAttribute("products",products);
+        return "search_product";
     }
 }

@@ -11,5 +11,6 @@
 <a href="home">Bai 1</a><br>
 <a href="greeting">Bai 2</a><br>
 <a href="product">Bai3</a><br>
+<a href="search_product">Bai4</a>
 </body>
 </html>
