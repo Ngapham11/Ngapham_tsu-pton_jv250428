@@ -2,16 +2,18 @@
   Created by IntelliJ IDEA.
   User: phuch
   Date: 9/19/2025
-  Time: 11:57 AM
+  Time: 1:03 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: phuch
+  Date: 9/19/2025
+  Time: 12:41 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>Danh sach sinh vien</title>
-</head>
-<body>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,33 +27,23 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Ten</th>
-        <th scope="col">Email</th>
-        <th scope="col">Ngay sinh</th>
-        <th scope="col">Hanh dong</th>
+<form  style="width: 500px; margin-left:200px;margin-top: 50px"  method="post" >
+    <div class="form-group">
+        <label>Ten</label>
+        <input type="text" class="form-control" name="name" value="${student.name}">
+    </div>
+    <div class="form-group">
+        <label >Email</label>
+        <input type="email" class="form-control" name="email" value="${student.email}">
+    </div>
+    <div class="form-group ">
+        <label >Ngay sinh</label>
+        <input type="date" class="form-control" name="date" value="${student.birthday}">
 
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${students}" var="student" varStatus="loop">
-        <tr>
-            <th scope="row">${student.id}</th>
-            <td>${student.name}</td>
-            <td>${student.email}</td>
-            <td>${student.birthday}</td>
-            <td><a class="btn btn-primary" href="/update/${student.id}" role="button">Sua</a>
-            <a  class="btn btn-primary" href="/delete/${student.id}" role="button">Xoa</a></td>
-        </tr>
-    </c:forEach>
+    </div>
 
-
-    </tbody>
-</table>
-<a type="submit" class="btn btn-primary"  href="add">Them moi</a>
+    <button type="submit" class="btn btn-primary">Cap nhat</button>
+</form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -65,3 +57,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+
