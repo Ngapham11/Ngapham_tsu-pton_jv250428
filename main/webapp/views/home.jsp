@@ -2,16 +2,10 @@
   Created by IntelliJ IDEA.
   User: phuch
   Date: 9/19/2025
-  Time: 11:57 AM
+  Time: 11:37 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>Danh sach sinh vien</title>
-</head>
-<body>
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,33 +19,42 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Ten</th>
-        <th scope="col">Email</th>
-        <th scope="col">Ngay sinh</th>
-        <th scope="col">Hanh dong</th>
+<div class="container mt-5">
+    <h3 class="text-center mb-4 font-weight-bold">Danh Sách Phim Đang Chiếu</h3>
 
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${students}" var="student" varStatus="loop">
-        <tr>
-            <th scope="row">${student.id}</th>
-            <td>${student.name}</td>
-            <td>${student.email}</td>
-            <td>${student.birthday}</td>
-            <td><a class="btn btn-primary" href="/update/${student.id}" role="button">Sua</a>
-            <a  class="btn btn-primary" href="/delete/${student.id}" role="button">Xoa</a></td>
-        </tr>
-    </c:forEach>
+    <div class="card-deck">
+        <!-- Card 1 -->
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-primary font-weight-bold">King Kong</h5>
+                <p class="card-text">Đạo Diễn: Nguyễn Công Hưởng</p>
+                <p class="card-text">Thể Loại: phiêu lưu hành động</p>
+                <a href="#" class="card-link">Xem Chi Tiết</a>
+            </div>
+        </div>
 
+        <!-- Card 2 -->
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-primary font-weight-bold">Fast and Furious 7</h5>
+                <p class="card-text">Đạo Diễn: Join Nguyễn</p>
+                <p class="card-text">Thể Loại: Đua xe, hành động</p>
+                <a href="#" class="card-link">Xem Chi Tiết</a>
+            </div>
+        </div>
 
-    </tbody>
-</table>
-<a type="submit" class="btn btn-primary"  href="add">Them moi</a>
+        <!-- Card 3 -->
+        <div class="card text-center shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-primary font-weight-bold">Avatar 2</h5>
+                <p class="card-text">Đạo Diễn: Jony Nguyễn</p>
+                <p class="card-text">Thể Loại: khoa học viễn tưởng</p>
+                <a href="#" class="card-link">Xem Chi Tiết</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
