@@ -2,11 +2,17 @@
   Created by IntelliJ IDEA.
   User: phuch
   Date: 9/20/2025
-  Time: 1:21 PM
+  Time: 10:36 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: phuch
+  Date: 9/20/2025
+  Time: 3:16 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,33 +27,27 @@
 </head>
 <body>
 <div class="container">
-    <a name="" id="" class="btn btn-primary" href="/movie/add" role="button">Them moi phim</a>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>STT</th>
-            <th>Title</th>
-            <th>Director</th>
-            <th>Genre</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${movies}" var="movie" varStatus="loop">
-            <tr>
-                <td>${loop.index+1}</td>
-                <td >${movie.title}</td>
-                <td>${movie.director}</td>
-                <td>${movie.genre}</td>
-                <td>
-                    <a class="btn btn-primary" href="movie/update/${movie.id}" role="button">Sua</a>
-                    <a class="btn btn-danger" href="movie/delete/${movie.id}" role="button">Xoa</a>
-                </td>
-            </tr>
-        </c:forEach>
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input type="text" class="form-control" name="title" value="${movie.title}">
 
+                </div>
+                <div class="form-group">
+                    <label >Director</label>
+                    <input type="text" class="form-control" name="director" value="${movie.director}">
+                </div>
+                <div class="form-group ">
+                    <label class="form-check-label" >Genre</label>
+                    <input type="text" class="form-control" name="genre" value="${movie.genre}">
 
-        </tbody>
-    </table>
+                </div>
+                <button type="submit" class="btn btn-primary">Cap nhat</button>
+            </form>
+        </div>
+    </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

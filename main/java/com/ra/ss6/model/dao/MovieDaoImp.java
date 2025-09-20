@@ -83,7 +83,23 @@ public class MovieDaoImp implements MovieDao{
 
     @Override
     public boolean updateMovie(Movie movie) {
-        return false;
+        Connection connection=null;
+        CallableStatement callableStatement=null;
+        boolean result=false;
+        try {connection= ConnectionDB.openConnection();
+            callableStatement=connection.prepareCall("{call update_movie(?,?,?,?)}");
+            callableStatement.setInt(1,movie.getId());
+            callableStatement.setString(2,movie.getTitle());
+            callableStatement.setString(3, movie.getDirector());
+            callableStatement.setString(4,movie.getGenre());
+            callableStatement.executeUpdate();
+            result=true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+            assert connection != null;
+            ConnectionDB.closeConnection(connection);
+        }return result;
     }
 
     @Override
