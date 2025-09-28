@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -16,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "students")
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull(message ="Khong duoc de trong")
     private String name;
@@ -25,7 +24,8 @@ public class Student {
     @NotNull(message = "Khong duoc de trong")
     @Min(value = 0,message = "Diem phai lon hon 0")
     private Float ageMark;
-    private  boolean isStudying;
+    private  Boolean studying;
+    //phai viet Boolean neu khong se bi loi @Data, khong tu sinh get,set
 
     public long getId() {
         return id;
@@ -59,11 +59,11 @@ public class Student {
         this.ageMark = ageMark;
     }
 
-    public boolean isStudying() {
-        return isStudying;
+    public Boolean getStudying() {
+        return studying;
     }
 
-    public void setStudying(boolean studying) {
-        isStudying = studying;
+    public void setStudying(Boolean studying) {
+        this.studying = studying;
     }
 }

@@ -22,7 +22,7 @@
 <body>
 <div class="container" style="text-align: center">
     <h1>Danh sach sinh vien</h1>
-    <a class="btn btn-success" href="#" role="button">Them moi sinh vien</a>
+    <a class="btn btn-success" href="/add" role="button">Them moi sinh vien</a>
     <table class="table m-2">
         <thead>
         <tr class="btn-success">
@@ -30,21 +30,21 @@
             <th>TEN</th>
             <th>EMAIL</th>
             <th>DIEM SO</th>
-            <th>DANG HOC</th>
+            <th>TINH TRANG</th>
             <th>HANH DONG</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${students}" var="student" varStatus="loop">
         <tr>
-            <td scope="row">${loop.index+1}</td>
+            <td scope="row">${student.id}</td>
             <td>${student.name}</td>
             <td>${student.email}</td>
             <td>${student.ageMark}</td>
-            <td>${student.studying}</td>
+            <td>${student.studying ?'Dang hoc':'Da nghi'}</td>
             <td>
-                <a class="btn btn-primary" href="#" >Sua</a>
-                <a class="btn btn-danger" href="#" >Xoa</a>
+                <a class="btn btn-primary" href="/update/${student.id}" >Sua</a>
+                <a class="btn btn-danger" href="/delete/${student.id}" >Xoa</a>
             </td>
 
         </tr>

@@ -34,7 +34,7 @@ public class StudentService {
     public String deleteStudent(long id){
         Student student=studentRepository.findById(id);
         if (student!=null){
-            if (student.isStudying()){
+            if (student.getStudying()){
                 return "Khong the xoa hoc sinh dang hoc";
             }else {
                 studentRepository.deleteById(id);
