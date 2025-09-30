@@ -37,7 +37,7 @@ import java.util.Properties;
         public DataSource dataSource() {
             DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
             driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-            driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/ss7?createDatabaseIfNotExist=true");
+            driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/session7");
             driverManagerDataSource.setUsername("root");
             driverManagerDataSource.setPassword("12345678");
             return driverManagerDataSource;

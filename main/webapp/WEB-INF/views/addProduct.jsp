@@ -1,12 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: phuch
-  Date: 9/21/2025
-  Time: 10:20 PM
+  Date: 9/30/2025
+  Time: 10:14 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,34 +20,29 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h2>Danh sach danh muc</h2>
-<a class="btn btn-primary" href="/add" role="button">Them moi</a>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">TEN DANH MUC</th>
-        <th scope="col">MO TA</th>
-        <th scope="col">TRANG THAI</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${categories}" var="category">
-        <tr>
-            <th scope="row">${category.id}</th>
-            <td>${category.name}</td>
-            <td>${category.description}</td>
-            <td>${category.status}</td>
-          <td> <a   class="btn btn-primary" href="/update/${category.id}" >Sua</a>
-            <a class="btn btn-danger" href="/delete/${category.id}" onclick="return confirm('Bạn có chắc muốn xóa không?')">Xoa</a>
-          </td>
-        </tr>
-    </c:forEach>
+<div class="container">
 
-
-    </tbody>
-</table>
+    <f:form method="post"  modelAttribute="product">
+        <div class="form-group">
+            <label >Ten san pham</label>
+            <f:input path="name" class="form-control"/>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label >Mo ta</label>
+            <f:input path="description" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label >Gia</label>
+            <f:input path="price" class="form-control" id="exampleInputPassword1"/>
+        </div>
+        <div class="form-group">
+            <label >Danh muc</label>
+            <f:input path="categoryId" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Them</button>
+    </f:form>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

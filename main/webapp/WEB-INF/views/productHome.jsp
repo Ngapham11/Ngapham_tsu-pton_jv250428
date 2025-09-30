@@ -1,12 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: phuch
-  Date: 9/21/2025
-  Time: 10:20 PM
+  Date: 9/30/2025
+  Time: 12:11 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,34 +20,37 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h2>Danh sach danh muc</h2>
-<a class="btn btn-primary" href="/add" role="button">Them moi</a>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">TEN DANH MUC</th>
-        <th scope="col">MO TA</th>
-        <th scope="col">TRANG THAI</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${categories}" var="category">
+<div class="container">
+    <h1>Danh sach san pham</h1>
+    <a class="btn btn-primary" href="/product/add" role="button">Them mo san pham</a>
+    <table class="table">
+        <thead>
         <tr>
-            <th scope="row">${category.id}</th>
-            <td>${category.name}</td>
-            <td>${category.description}</td>
-            <td>${category.status}</td>
-          <td> <a   class="btn btn-primary" href="/update/${category.id}" >Sua</a>
-            <a class="btn btn-danger" href="/delete/${category.id}" onclick="return confirm('Bạn có chắc muốn xóa không?')">Xoa</a>
-          </td>
+            <th>ID</th>
+            <th>Ten san pham</th>
+            <th>Mo ta</th>
+            <th>Gia </th>
+            <th>Danh muc</th>
+            <th>Thao tac</th>
         </tr>
-    </c:forEach>
-
-
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${products}" var="product">
+        <tr>
+            <td scope="row">${product.id}</td>
+            <td>${product.name}</td>
+            <td>${product.description}</td>
+            <td>${product.price}</td>
+            <td>${product.categoryId}</td>
+            <td>
+                <a  class="btn btn-primary" href="/product/update/${product.id}">Sua</a>
+                <a  class="btn btn-danger" href="/product/delete/${product.id}" onclick="return confirm('Ban co chac chan muon xoa khong???')" >Xoa</a>
+            </td>
+        </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
