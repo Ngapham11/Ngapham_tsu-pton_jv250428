@@ -54,7 +54,7 @@ boolean result=studentService.save(student);
             return "update_student";
         }studentService.updateStudent(student,id);
             return "redirect:/";
-        
+
     }
 
 }

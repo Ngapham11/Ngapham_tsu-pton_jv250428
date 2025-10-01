@@ -22,7 +22,7 @@
 <body>
 <div class="container" style="text-align: center">
     <h1>Danh sach sinh vien</h1>
-    <a class="btn btn-success" href="/add" role="button">Them moi sinh vien</a>
+    <a class="btn btn-success" href="/customer/add" role="button">Them moi sinh vien</a>
     <table class="table m-2">
         <thead>
         <tr class="btn-success">
