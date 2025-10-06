@@ -59,7 +59,7 @@
         </div>
         <div class="form-group">
             <label >Travel Image</label>
-            <f:input path="travel_image" class="form-control" id="exampleInputEmail1" />
+            <f:input path="travel_image" class="form-control" id="exampleInputEmail1" type="file" />
             <f:errors path="travel_image" cssClass="error"/>
         </div>
         <div class="form-group">

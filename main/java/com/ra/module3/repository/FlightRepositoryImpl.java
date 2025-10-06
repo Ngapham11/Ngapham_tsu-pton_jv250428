@@ -1,5 +1,6 @@
 package com.ra.module3.repository;
 
+import com.ra.module3.model.dto.FlightDto;
 import com.ra.module3.model.entity.Flight;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,8 +23,8 @@ public class FlightRepositoryImpl implements FlightRepository{
     }
 
     @Override
-    public Flight findById(int id) {
-        return entityManager.find(Flight.class,id);
+    public FlightDto findById(int id) {
+        return entityManager.find(FlightDto.class,id);
     }
 
     @Transactional

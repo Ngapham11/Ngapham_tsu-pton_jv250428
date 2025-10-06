@@ -1,5 +1,6 @@
 package com.ra.module3.controller;
 
+import com.ra.module3.model.dto.FlightDto;
 import com.ra.module3.model.entity.Flight;
 import com.ra.module3.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,15 +35,16 @@ public class FlightController {
     }
 @GetMapping("/add")
     public String addFlight(Model model){
-        model.addAttribute("flight",new Flight());
+        model.addAttribute("flight",new FlightDto());
         return "add_flight";
 }
 @PostMapping("/add")
-public String addFlight(@Valid @ModelAttribute Flight flight, BindingResult bindingResult,Model model){
+public String addFlight(@Valid @ModelAttribute("flight") FlightDto flight, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("flight",flight);
             return "add_flight";
         }
+
         flightService.saveFlight(flight);
         return "redirect:/";
 }@GetMapping("/edit/{id}")
@@ -51,7 +53,7 @@ public String addFlight(@Valid @ModelAttribute Flight flight, BindingResult bind
         return "edit_flight";
     }
     @PostMapping("/edit/{id}")
-    public String edit(@Valid @ModelAttribute Flight flight,BindingResult bindingResult,@PathVariable int id,
+    public String edit(@Valid @ModelAttribute("flight") FlightDto flight,BindingResult bindingResult,@PathVariable int id,
                        Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("flight",flight);
