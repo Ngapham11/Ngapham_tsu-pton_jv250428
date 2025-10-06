@@ -1,5 +1,6 @@
 package com.ra.module3.model.entity;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,20 +14,20 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
     @Column(length = 100)
-    @NotNull(message = "Khong duoc de trong")
+    @NotBlank(message = "Khong duoc de trong")
     private  String flight_name;
-    @NotNull(message = "Khong duoc de trong")
+    @NotBlank(message = "Khong duoc de trong")
    private String starting_point;
     @NotNull(message = "Khong duoc de trong")
     private int travel_time;
-    @NotNull(message = "Khong duoc de trong")
+    @NotBlank(message = "Khong duoc de trong")
    private String destination;
     @NotNull(message = "Khong duoc de trong")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
    private LocalDate departure_date;
-    @NotNull(message = "Khong duoc de trong")
+    @NotBlank(message = "Khong duoc de trong")
    private String time_unit;
-    @NotNull(message = "Khong duoc de trong")
+    @NotBlank(message = "Khong duoc de trong")
    private String travel_image;
     private boolean status;
 
