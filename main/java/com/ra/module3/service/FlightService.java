@@ -16,11 +16,12 @@ public class FlightService {
   public   List<Flight> findAllWithPagination(int page, int size, String searchFlightName){
         return flightRepository.findAllWithPagination(page,size,searchFlightName);
     };
-  public   FlightDto findById(int id){
+  public   Flight findById(int id){
         return flightRepository.findById(id);
     };
   public   boolean saveFlight(FlightDto flight){
       Flight newFlight=new Flight();
+      newFlight.setId(flight.getId());
       newFlight.setFlight_name(flight.getFlight_name());
       newFlight.setDestination(flight.getDestination());
       newFlight.setStatus(flight.isStatus());

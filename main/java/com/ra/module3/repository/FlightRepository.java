@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface FlightRepository {
     List<Flight>findAllWithPagination(int page,int size,String searchFlightName);
-    FlightDto findById(int id);
+    Flight findById(int id);
     boolean saveFlight(Flight flight);
     boolean deleteFlight(int id);
     long countFlightByFlightName(String searchFlightName);

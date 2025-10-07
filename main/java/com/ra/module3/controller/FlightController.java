@@ -48,12 +48,13 @@ public String addFlight(@Valid @ModelAttribute("flight") FlightDto flight, Bindi
         flightService.saveFlight(flight);
         return "redirect:/";
 }@GetMapping("/edit/{id}")
-    public String edit(@PathVariable int id,Model model){
-        model.addAttribute("flight",flightService.findById(id));
+    public String edit(@PathVariable int id, Model model){
+        Flight flight = flightService.findById(id);
+        model.addAttribute("flight", flight);
         return "edit_flight";
     }
     @PostMapping("/edit/{id}")
-    public String edit(@Valid @ModelAttribute("flight") FlightDto flight,BindingResult bindingResult,@PathVariable int id,
+    public String edit(@PathVariable int id,@Valid @ModelAttribute("flight") FlightDto flight,BindingResult bindingResult,
                        Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("flight",flight);

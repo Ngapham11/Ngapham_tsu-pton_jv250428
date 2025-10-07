@@ -23,8 +23,8 @@ public class FlightRepositoryImpl implements FlightRepository{
     }
 
     @Override
-    public FlightDto findById(int id) {
-        return entityManager.find(FlightDto.class,id);
+    public Flight findById(int id) {
+        return entityManager.find(Flight.class,id);
     }
 
     @Transactional
